@@ -48,7 +48,7 @@ server.get('/api/dogs', (req, res) => {
 });
 
 server.get('/api/dogs/:id', (req, res) => {
-    console.log(req.params);
+    console.log(req.params.id);
     res.end('unimplemented!');
 });
 
