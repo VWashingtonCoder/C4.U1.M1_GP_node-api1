@@ -19,6 +19,8 @@
 // import express from 'express';
 const express = require('express');
 
+const Dog = require('./dog-model');
+
 const server = express();
 
 server.get('/', (req, res) => {
@@ -39,7 +41,7 @@ server.get('/json', (req, res) => {
 
 
 server.get('/api/dogs', (req, res) => {
-    res.end('unimplemented!');
+    let dogs = Dog.findAll();
 });
 
 server.get('/api/dogs/{id}', (req, res) => {
