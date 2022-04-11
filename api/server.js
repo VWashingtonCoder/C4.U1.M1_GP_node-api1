@@ -38,15 +38,25 @@ server.get('/json', (req, res) => {
 // | Remove a Dog          | /api/dogs/{id}     | DELETE | deleted Dog       |
 
 
-server.get('/api/dogs', () => {});
+server.get('/api/dogs', (req, res) => {
+    res.end('unimplemented!');
+});
 
-server.get('/api/dogs/{id}', () => {});
+server.get('/api/dogs/{id}', (req, res) => {
+    res.end('unimplemented!');
+});
 
-server.post('/api/dogs', () => {});
+server.post('/api/dogs', (req, res) => {
+    res.end('unimplemented!');
+});
 
-server.put('/api/dogs/{id}', () => {});
+server.put('/api/dogs/{id}', (req, res) => {
+    res.end('unimplemented!');
+});
 
-server.delete('/api/dogs/{id}', () => {});
+server.delete('/api/dogs/{id}', (req, res) => {
+    res.end('unimplemented!');
+});
 
 
 module.exports = server;
