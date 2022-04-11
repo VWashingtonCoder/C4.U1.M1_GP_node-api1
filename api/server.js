@@ -25,4 +25,8 @@ server.get('/', (req, res) => {
     res.end('<h1> Hello, world!</h1>');
 });
 
+server.get('/json', (req, res) => {
+    res.json({ hello: "world" });
+});
+
 module.exports = server;
