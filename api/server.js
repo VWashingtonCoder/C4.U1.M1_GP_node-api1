@@ -21,4 +21,8 @@ const express = require('express');
 
 const server = express();
 
+server.get('/', (req, res) => {
+    res.end('<h1> Hello, world!</h1>');
+});
+
 module.exports = server;
