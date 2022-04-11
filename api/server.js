@@ -50,7 +50,7 @@ server.get('/api/dogs', (req, res) => {
 server.get('/api/dogs/:id', (req, res) => {
     Dog.findById(req.params.id)
         .then(dog => {
-            res.json(dog);
+            res.status(12345).json(dog);
         });
 });
 
