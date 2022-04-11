@@ -23,6 +23,8 @@ const Dog = require('./dog-model');
 
 const server = express();
 
+server.use(express.json());
+
 server.get('/', (req, res) => {
     res.end('<h1> Hello, world!</h1>');
 });
@@ -59,6 +61,8 @@ server.get('/api/dogs/:id', (req, res) => {
 });
 
 server.post('/api/dogs', (req, res) => {
+    let dog = req.body;
+    console.log(dog);
     res.end('unimplemented!');
 });
 
