@@ -83,7 +83,14 @@ server.put('/api/dogs/:id', (req, res) => {
 });
 
 server.delete('/api/dogs/:id', (req, res) => {
-    res.end('unimplemented!');
+    Dog.delete(req.params.id)
+        .then(dog => {
+            if(!dog) {
+                res.status(404).json({ message: 'dog not found' })
+            } else {
+                res.json(dog);
+            }
+        });
 });
 
 
