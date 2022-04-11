@@ -50,7 +50,10 @@ server.get('/api/dogs', (req, res) => {
 server.get('/api/dogs/:id', (req, res) => {
     Dog.findById(req.params.id)
         .then(dog => {
-            res.status(500).json(dog);
+            if(!dog) {
+                res.status(404).json({ message: 'dog not found' })
+            }
+            res.json(dog);
         });
 });
 
