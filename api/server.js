@@ -52,8 +52,9 @@ server.get('/api/dogs/:id', (req, res) => {
         .then(dog => {
             if(!dog) {
                 res.status(404).json({ message: 'dog not found' })
+            } else {
+                res.json(dog);
             }
-            res.json(dog);
         });
 });
 
