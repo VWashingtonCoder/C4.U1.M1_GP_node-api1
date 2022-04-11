@@ -47,7 +47,7 @@ server.get('/api/dogs', (req, res) => {
         });
 });
 
-server.get('/api/dogs/{id}', (req, res) => {
+server.get('/api/dogs/:id', (req, res) => {
     res.end('unimplemented!');
 });
 
@@ -55,11 +55,11 @@ server.post('/api/dogs', (req, res) => {
     res.end('unimplemented!');
 });
 
-server.put('/api/dogs/{id}', (req, res) => {
+server.put('/api/dogs/:id', (req, res) => {
     res.end('unimplemented!');
 });
 
-server.delete('/api/dogs/{id}', (req, res) => {
+server.delete('/api/dogs/:id', (req, res) => {
     res.end('unimplemented!');
 });
 
