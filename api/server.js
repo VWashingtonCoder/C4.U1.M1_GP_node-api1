@@ -41,7 +41,10 @@ server.get('/json', (req, res) => {
 
 
 server.get('/api/dogs', (req, res) => {
-    let dogs = Dog.findAll();
+    Dog.findAll()
+        .then(dogs => {
+            res.json(dogs);
+        });
 });
 
 server.get('/api/dogs/{id}', (req, res) => {
