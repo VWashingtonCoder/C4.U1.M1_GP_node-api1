@@ -62,8 +62,10 @@ server.get('/api/dogs/:id', (req, res) => {
 
 server.post('/api/dogs', (req, res) => {
     let dog = req.body;
-    console.log(dog);
-    res.end('unimplemented!');
+    Dog.create(dog)
+        .then(dog => {
+            res.status(201).json(dog);
+        });
 });
 
 server.put('/api/dogs/:id', (req, res) => {
