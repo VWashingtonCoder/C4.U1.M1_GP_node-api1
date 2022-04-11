@@ -48,8 +48,10 @@ server.get('/api/dogs', (req, res) => {
 });
 
 server.get('/api/dogs/:id', (req, res) => {
-    console.log(req.params.id);
-    res.end('unimplemented!');
+    Dog.findById(req.params.id)
+        .then(dog => {
+            res.json(dog);
+        });
 });
 
 server.post('/api/dogs', (req, res) => {
