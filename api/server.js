@@ -69,7 +69,13 @@ server.post('/api/dogs', (req, res) => {
 });
 
 server.put('/api/dogs/:id', (req, res) => {
-    res.end('unimplemented!');
+    let id = req.params.id;
+    let dog = req.body;
+
+    Dog.update(id, dog)
+        .then(updatedDog => {
+            res.json(dog);
+        })
 });
 
 server.delete('/api/dogs/:id', (req, res) => {
